@@ -15,4 +15,19 @@ def decode_char (char)
   MORSE_CODE[char]
 end
 
+def decode_word (word)
+  leters = word.split
+  leters_decode = leters.map do |leter|
+    leter = decode_char(leter)
+  end
+end
 
+def decode_message (message)
+  words = message.split('   ')
+  words_decode = words.map do |word|
+    word = decode_word(word).join('')
+  end
+  words_decode.each {|word| print "#{word} "}
+end
+
+decode_message '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'
