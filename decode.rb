@@ -24,7 +24,7 @@ end
 def decode_message(message)
   words = message.split('   ')
   words_decode = words.map do |word|
-    decode_word(word).join('')
+    decode_word(word).join
   end
   words_decode.each { |word| print "#{word} " }
 end
